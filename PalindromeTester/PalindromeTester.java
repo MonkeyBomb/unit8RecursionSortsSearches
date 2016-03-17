@@ -21,7 +21,15 @@ public class PalindromeTester
       {
          System.out.println ("Enter a potential palindrome:");
          str = s.nextLine();
-
+         
+         if ( isPalindrome( str ) == true)
+         {
+            System.out.println ("That string IS a palindrome.");
+         }
+         else
+         {
+             System.out.println ("That string is NOT a palindrome.");
+           }
          left = 0;
          right = str.length() - 1;
 
@@ -43,4 +51,13 @@ public class PalindromeTester
          another = s.nextLine();
       }
    }
+   public static boolean isPalindrome (String str )
+   {
+    if ( str.length() <= 1)
+    {
+        return true;
+    }
+    String substr = str.substring( 1, str.length() - 1);
+    return (( str.charAt( 0 ) == str.charAt( str.length()  -1)) && isPalindrome( substr ));
+    }
 }
