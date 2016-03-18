@@ -37,7 +37,7 @@ public class FractalTreePanel extends JPanel
             {
              g.setColor(Color.GREEN);
             }
-            drawFractal(g, x2, y2, angle - 20, depth - 1);
+            drawFractal(g, x2, y2, angle - 30, depth - 1);
             drawFractal(g, x2, y2, angle + 20, depth - 1);
         }
     }
