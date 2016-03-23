@@ -46,7 +46,7 @@ public class FractalTreePanel extends JPanel
     {
         super.paintComponent (g);
 
-        g.setColor(Color.green);
+        g.setColor(Color.GREEN);
 
         drawFractal(g, 500, 800, 0 , 12);
     }
