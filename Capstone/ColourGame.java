@@ -11,10 +11,9 @@ import javax.swing.JOptionPane;
 public class ColourGame extends JFrame {
     static int Pick;    //The color the player picked
     
-    public ColourGame( )
+    public ColourGame()
     {
         JFrame frame = new JFrame("ColourGamePicker");
-
         ArrayList<Integer> Computer = new ArrayList<Integer>();
         ArrayList<Integer> Player = new ArrayList<Integer>();
         int CompPick;   //The color the computer picks
@@ -63,14 +62,9 @@ public class ColourGame extends JFrame {
             Computer.add(CompPick); //Add the color to the computer's arraylist
 
             //      Search through the arraylist and find what colors were pushed
-
             for (int i = 0; i < Computer.size(); i++) {
                 if (Computer.get(i) == 0) { //Blue Button
-                    //Make the blue button look like it was clicked
                     BlueButton.doClick(1000);
-                    //Pause the execution for one second (if the arraylist has more
-                    //than one item it needs to pause in between each color lighting up)
-
                     try {
                         Thread.currentThread().sleep(1000);
                     }
@@ -107,8 +101,7 @@ public class ColourGame extends JFrame {
                     }
                 }
             }
-            //      Add an action listener to each button. If the button is pushed,
-            //       set Pick to the number that corresponds to the color of the button
+         
             BlueButton.addActionListener(new ActionListener()
             {
                     public void actionPerformed(ActionEvent e)
@@ -135,8 +128,6 @@ public class ColourGame extends JFrame {
 
             GreenButton.addActionListener(new ActionListener()
             {
-
-
                     public void actionPerformed(ActionEvent e)
 
                     {
@@ -144,28 +135,18 @@ public class ColourGame extends JFrame {
                         Pick = 3;
 
                     }
-
                 });
-
-
-
-            Player.add(Pick);   //Add the button that was pushed to the player's arraylist
-
-
-            //      Search through the two arraylists to make sure the player pushed the right button
-
+            Player.add(Pick);  
+           
             for (int j = 0; j < Computer.size(); j++) {
-
                 if (Computer.get(j) != Player.get(j)) {
-
                     JOptionPane.showMessageDialog(null, "You Lose");
-
                 }
-
             }
-
         } while (Pick == CompPick);
-
     }
-    
+    public static void main(String [] args)
+    {
+        ColourGame view = new ColourGame();
+    }
 }
