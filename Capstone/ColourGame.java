@@ -61,6 +61,41 @@ public class ColourGame extends JFrame {
             CompPick = gen.nextInt(4);  //Pick a random number(color)
             Computer.add(CompPick); //Add the color to the computer's arraylist
 
+            
+            BlueButton.addActionListener(new ActionListener()
+            {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        Pick = 0;
+                    }
+                });
+
+            RedButton.addActionListener(new ActionListener() 
+            {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                       Pick = 1;
+                    }
+                });
+
+            YellowButton.addActionListener(new ActionListener() 
+            {
+              public void actionPerformed(ActionEvent e)
+               {
+                      Pick = 2;
+               }
+               });
+
+            GreenButton.addActionListener(new ActionListener()
+            {
+                    public void actionPerformed(ActionEvent e)
+
+                    {
+
+                        Pick = 3;
+
+                    }
+                });
             //      Search through the arraylist and find what colors were pushed
             for (int i = 0; i < Computer.size(); i++) {
                 if (Computer.get(i) == 0) { //Blue Button
@@ -102,40 +137,7 @@ public class ColourGame extends JFrame {
                 }
             }
          
-            BlueButton.addActionListener(new ActionListener()
-            {
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        Pick = 0;
-                    }
-                });
-
-            RedButton.addActionListener(new ActionListener() 
-            {
-                    public void actionPerformed(ActionEvent e)
-                    {
-                       Pick = 1;
-                    }
-                });
-
-            YellowButton.addActionListener(new ActionListener() 
-            {
-              public void actionPerformed(ActionEvent e)
-               {
-                      Pick = 2;
-               }
-               });
-
-            GreenButton.addActionListener(new ActionListener()
-            {
-                    public void actionPerformed(ActionEvent e)
-
-                    {
-
-                        Pick = 3;
-
-                    }
-                });
+ 
             Player.add(Pick);  
            
             for (int j = 0; j < Computer.size(); j++) {
